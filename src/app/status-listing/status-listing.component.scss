@@ -1,0 +1,31 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .input-pet-name {
+        display: flex;
+        padding: 20px;
+    }
+    .status-details {
+        display: flex;
+        flex-direction: row;
+        .group {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid;
+            h2 {
+                border-bottom: 1px solid;
+            }
+            .pet-detail {
+                padding-bottom: 10px;
+                display: flex;
+                justify-content: space-between;
+                .pet-name {
+                    width: 100px;
+                    word-wrap: break-word;
+                }
+            }
+        }
+    }
+}

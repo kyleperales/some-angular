@@ -1,0 +1,35 @@
+<div class="main-container">
+    <div class="input-pet-name">
+        <label for="petName">Pet Name:</label>
+        <input id="petName" type="text" [(ngModel)]="petName">
+        <button (click)="onNewPet()">Add</button>
+    </div>
+    <div class="status-details">
+        <div class="listed group">
+            <h2>Listed</h2>
+            @for(pet of (listed$ | async); track pet.id) {
+                <div class="pet-detail">
+                    <span class="pet-name">{{pet.name}}</span>
+                    <button (click)="toExamining(pet.id)">Next</button>
+                </div>
+            }
+        </div>
+        <div class="examining group">
+            <h2>Examining</h2>
+            @for(pet of (examining$ | async); track pet.id) {
+                <div class="pet-detail">
+                    <span class="pet-name">{{pet.name}}</span>
+                    <button (click)="toHuman(pet.id)">Next</button>
+                </div>
+            }
+        </div>
+        <div class="back-to-human group">
+            <h2>Back To Human</h2>
+            @for(pet of (backToHuman$ | async); track pet.id) {
+                <div class="pet-detail">
+                    <span class="pet-name">{{pet.name}}</span>
+                </div>
+            }
+        </div>
+    </div>
+</div>
